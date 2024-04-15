@@ -2,13 +2,8 @@ var video = document.querySelector("#player1");
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
-    if (video) {
-        video.autoplay = false;
-        video.loop = false;
-        // console.log('Autoplay off and looping off.');
-    } else {
-        // console.log('Video element not found!');
-    }
+	video.autoplay = false;
+    video.loop = false;
 });
 
 document.querySelector("#play").addEventListener("click", function() {
@@ -24,17 +19,13 @@ document.querySelector("#pause").addEventListener("click", function() {
 });
 
 document.querySelector("#slower").addEventListener("click", function() {
-	if (!video.paused) {
-		video.playbackRate *= 0.9;
-		console.log("New Speed: ", video.playbackRate)
-	}
+	video.playbackRate *= 0.9;
+	console.log("New Speed: ", video.playbackRate)
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
-	if (!video.paused) {
-		video.playbackRate *= 1.1;
-		console.log("New Speed: ", video.playbackRate)
-	}
+	video.playbackRate *= 1.1;
+	console.log("New Speed: ", video.playbackRate)
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
@@ -60,9 +51,9 @@ document.querySelector("#slider").addEventListener("input", function() {
 });
 
 document.getElementById("vintage").addEventListener("click", function(){
-	document.body.classList.add("oldSchool");
+	document.querySelector("video").classList.add("oldSchool");
 });
 
 document.getElementById("orig").addEventListener("click", function(){
-	document.body.classList.remove("oldSchool");
+	document.querySelector("video").classList.remove("oldSchool");
 });
